@@ -1,6 +1,11 @@
-const express=require('express'),
-app=express();
+const express=require ('express')
+const homeRoute=require ('./routs/home')
+const app=express()
+const port=5000
 
-app.listen(3000, ()=>{
-    console.log('server started at 3000')
+app.set('view engine', 'ejs')
+app.use('/home',homeRoute)
+
+app.listen(port, ()=>{
+    console.log('Example app listening on port ${port}!')
 })
